@@ -6,7 +6,7 @@ Written in pure C, without any external library.
 
 ![logo](https://github.com/Hypsurus/skod/wiki/screenshots/skod_logo.png)
 
-Featuers
+Features
 ==========
 
 * Highlight output.
