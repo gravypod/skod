@@ -4,6 +4,8 @@ Skod - FTP client for humans
 Skod is a (File|Transfer|Protocol) client for humans, easy to use and hackable.
 Written in pure C, without any external library.
 
+![logo](https://github.com/Hypsurus/skod/wiki/screenshots/skod_logo.png)
+
 Featuers
 ==========
 
