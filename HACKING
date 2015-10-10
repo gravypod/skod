@@ -1,0 +1,96 @@
+Skod - Contributing
+===================
+
+Coding style
+------------
+
+if, else
+.........
+
+>> GOOD
+if ( x > y ) {
+		/* code*/
+}
+
+
+>>> Bad 
+if ( x > y )
+{
+   /* code */
+}
+
+
+Use == insead of ! for example:
+.................................
+
+if (!y) >>> Bad
+if ( y == 0 ) >>> Good
+
+
+Comments should be ANSI-C89 compliant, That means no //
+........................................................
+
+>>> Good
+/* this is a comment*/
+
+>>> Bad
+// this is a comment
+
+
+Do not use this functions:
+............................
+
+* strdup
+* strcpy
+* memcpy
+* malloc
+* calloc
+* gets
+* puts
+
+Functions and files
+-------------------
+
+ftp.h
+~~~~~~
+char * ftp_getline(ftp_t*);
+char * ftp_pwd(ftp_t *ftp);
+int ftp_banner(ftp_t*);
+int ftp_login(ftp_t*);
+int ftp_getdataport(ftp_t*);
+int ftp_size(ftp_t*, char*);
+void ftp_list(ftp_t*, char*,int);
+void ftp_remove(ftp_t*, char*);
+void ftp_mkcon(ftp_t *);
+void ftp_close(ftp_t*);
+void ftp_cat(ftp_t*, char*);
+void ftp_download_single(ftp_t*, char*);
+void ftp_upload_single(ftp_t*, char*);
+void ftp_delete(ftp_t*, char*);
+void ftp_cwd(ftp_t*, char*);
+void ftp_mdtm(ftp_t*, char*);
+
+tcp.h
+~~~~~~
+FILE * tcp_connect(char*, char*);
+FILE * tcp_connect2(char*, int, char*);
+
+utils.h
+~~~~~~~~
+
+int util_file_exists(char*);
+void calc_bytes(data_t *, float);
+void print(int mode,char*, ...);
+void die(char*, ...);
+void signal_handler(int);
+void chkbuffer(char*);
+
+First read skod.c and ftp.c, to see how it works.
+
+Editor
+=======
+
+vim:set shiftwidth=4 tabstop=2
+
+Written by Hypsurus <hypsurus@mail.ru>.
+Last edited by Hypsurus at (Thu, 08 Oct 2015 17:36:11)
