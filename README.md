@@ -30,7 +30,7 @@ Usage
 By default skod will try to login as anonymous user,
 but you can use `-u, -p` to provide username, and password.
 
-skod is user-freindly and easy to use, follow the screenshots:
+skod is user-friendly and easy to use, follow the screenshots:
 
 ##### skod -s localhost -u root -p root --list "/"
 
