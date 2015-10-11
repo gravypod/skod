@@ -65,8 +65,10 @@ void ftp_upload_single(ftp_t *ftp, char *path) {
 	data_t d1;
 	data_t d2;
 
-	/* strrchr return the last string */
-	filename = strrchr(path, '/') + 1;
+	if ( path[0] == 0x24 || path[strlen(path)-1] == 0x2f )
+		filename = strrchr(path, '/') + 1;
+	else
+		filename = path;
 
 	if (( fp = fopen(path, "r")) == NULL )
 		die("Cannot read %s.", path);
