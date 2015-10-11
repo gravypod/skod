@@ -41,7 +41,7 @@ void skod_usage(char *arg) {
 		"\t--ls          -l : List directory contents.\n"
 		"\t--rm          -r : Remove files/direcotrys.\n"
 		"\t--cat         -c : Print files.\n"
-		"\t--pwd         -c : Print current working directory.\n"
+		"\t--pwd         -w : Print current working directory.\n"
 		"\t--download    -d : Download files/folders.\n"
 		"\t--upload      -U : Upload files/folders.\n"
 		"\t--dest        -e : Destination folder (for --upload).\n"
@@ -123,7 +123,7 @@ char * skod_hc_fingerprint(ftp_t *ftp) {
 		strcat(patr,":");
 		c++;
 		ftp_close(ftp);
-		}
+	}
 	return (char *)patr;
 }
 
@@ -152,15 +152,12 @@ void skod_scan(skod_t *skod, ftp_t *ftp) {
 	int v = 0;
 	ftp->alarm_sec = 3;
 
-	print(0, "%sStarting skod %s - scanning %s%s%s%s ...", WHT,PACKAGE_VERSION,END, 
-						GREEN, ftp->server, END);
+	print(0, "%sStarting skod %s - scanning %s%s%s%s ...", WHT,PACKAGE_VERSION,END, GREEN, ftp->server, END);
 	print(0, " ");
 	skod_parse_stat(skod, ftp);
 	print(0, "%sGenerating fingerprint %s ...", WHT,END);
 	skod_hc_fingerprint_parse(skod, ftp, v);
-	print(0, "%sHmm%s... %s%s%s server running %s%s%s.",WHT,END,
-			GREEN,skod->os,END, 
-			YEL,skod->prod,END);
+	print(0, "%sHmm%s... %s%s%s server running %s%s%s.",WHT,END,GREEN,skod->os,END,YEL,skod->prod,END);
 }
 
 
@@ -174,7 +171,6 @@ void skod_detect_ip(void) {
 	else if ( inet_pton(AF_INET6, ip, &addr6.s6_addr))
 		ipv6 = 1;
 	else
-		/* Will not happen in vaild host */
 		die("Failed to detect %s IP version.", ip);
 }
 
@@ -198,8 +194,7 @@ void skod_parse_cla(int argc, char **argv, skod_t *skod) {
 		{"mdtm",     required_argument, 0, 'm'},
     	{"pwd",      no_argument,       0, 'w'},
     	{"help",     no_argument,       0, 'h'},
-    	{"version",  no_argument,       0, 'v'},
-    	};
+    	{"version",  no_argument,       0, 'v'},};
 
 	while (( opt = getopt_long(argc, argv, "s:SP:u:p:l:r:d:U:c:z:D:we:m:hv", longopt, &index)) != -1 ) {
 		chkbuffer(optarg);
@@ -262,7 +257,7 @@ void skod_parse_cla(int argc, char **argv, skod_t *skod) {
 			default:
 				skod_usage(argv[0]);
 			}
-		}	
+	}	
 	if ( argc < 2 )
 		skod_usage(argv[0]);
 	if ( skod->server == NULL ) {
