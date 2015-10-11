@@ -38,14 +38,14 @@ int ipv6;
 
 /* types */
 typedef struct {
-		char *user;
-		char *password;
-		char *server;
-		char *port;
-		char *path;
-		char *os;
-		char *prod;
-		char *dest;
+	char *user;
+	char *password;
+	char *server;
+	char *port;
+	char *path;
+	char *os;
+	char *prod;
+	char *dest;
 } skod_t;
 
 /* prototypes */

@@ -18,8 +18,8 @@
 
 /* Handle data */
 typedef struct {
-		float bytes;
-		int bytes_postfix;
+	float bytes;
+	int bytes_postfix;
 } data_t;
 
 /* prototypes */

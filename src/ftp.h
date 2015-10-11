@@ -11,15 +11,15 @@
 #define FTP_SERVER	"localhost"
 
 typedef struct {
-		FILE *FD;
-		int code;
-		int dataport;
-		unsigned int alarm_sec;
-		int logged;
-		char *user;
-		char *password;
-		char *server;
-		char *port;
+	FILE *FD;
+	int code;
+	int dataport;
+	unsigned int alarm_sec;
+	int logged;
+	char *user;
+	char *password;
+	char *server;
+	char *port;
 } ftp_t;
 
 /* prototypes */
