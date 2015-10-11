@@ -190,7 +190,7 @@ void ftp_download_single(ftp_t *ftp, char *path) {
 		/* Bad */
 		else
 			print(1, "File %s\'%s\'%s is corrupted, try downloading it again?", RED,filename,END);
-		}
+	}
 	fclose(fp);
 	fclose(data);
 	close(dfd);
