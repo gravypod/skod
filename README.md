@@ -6,7 +6,7 @@ Written in pure C, without any external library.
 
 ![logo](https://github.com/Hypsurus/skod/wiki/screenshots/skod_logo.png)
 
-Featuers
+Features
 ==========
 
 * Highlight output.
@@ -30,7 +30,7 @@ Usage
 By default skod will try to login as anonymous user,
 but you can use `-u, -p` to provide username, and password.
 
-skod is user-freindly and easy to use, follow the screenshots:
+skod is user-friendly and easy to use, follow the screenshots:
 
 ##### skod -s localhost -u root -p root --list "/"
 
